@@ -1,0 +1,23 @@
+{
+  "name": "@alainrc2005/country-flags-onefile",
+  "version": "1.0.0",
+  "description": "Colección de Banderas de todos los países en un solo archivo CSS y PNG",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alainrc2005/country-flags-onefile.git"
+  },
+  "keywords": [
+    "flags",
+    "country"
+  ],
+  "author": "Alain Ramirez Cabrejas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alainrc2005/country-flags-onefile/issues"
+  },
+  "homepage": "https://github.com/alainrc2005/country-flags-onefile#readme"
+}
