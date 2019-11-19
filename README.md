@@ -26,9 +26,42 @@ Agregar al resources\sass\app.scss @import '~@alainrc2005/country-flags-onefile/
 
 ```js
 
-Vue...
+<template>
+...
+
+<q-select debounce="1000" v-model="country" label="Seleccione País"
+    options="countries"
+    option-value="value"
+    map-options
+    emit-value
+    hide-bottom-space
+    options-dense
+    behavior="menu">
+        <template v-slot:selected-item="scope">
+            <div class="flag " :class="'flag-'+scope.opt.value"></div>&nbsp;{{scope.opt.label}}
+        </template>
+        <template v-slot:option="scope">
+            <q-item
+                v-bind="scope.itemProps"
+                v-on="scope.itemEvents"
+                >
+                    <q-item-section>
+                        <div class="flag" :class="'flag-'+scope.opt.value"></div>
+                    </q-item-section>
+                    <q-item-section>
+                        <q-item-label v-html="scope.opt.label"></q-item-label>
+                    </q-item-section>
+            </q-item>
+        </template>
+</q-select>
+							
+...
+</template>
+
+...
 data() {
             return { 
+			  country: null,
 			  countries: [
                 {label: "Afghanistan", value: "af"},
                 {label: "Albania", value: "al"},
@@ -224,7 +257,7 @@ data() {
                 {label: "Zambia", value: "zm"},
                 {label: "Zimbabwe", value: "zw"},
                 ]
-			}
 		}
+	}
 ```
 
